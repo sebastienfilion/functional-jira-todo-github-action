@@ -18,4 +18,4 @@ jobs:
         with:
           deno-version: 1.4.2
       - run: >
-          export JIRA_TICKET_PREFIX=VE && git diff master..HEAD | deno run --allow-env https://raw.githubusercontent.com/sebastienfilion/functional-jira-todo-github-action/master/action.js
+          export JIRA_TICKET_PREFIX=VE && git diff origin/master..HEAD | deno run --allow-env https://raw.githubusercontent.com/sebastienfilion/functional-jira-todo-github-action/master/action.js
