@@ -16,10 +16,6 @@ import {
   when
 } from "https://x.nest.land/ramda@0.27.0/source/index.js";
 
-console.debug("LOL ")
-
-// TODO: lol
-
 import Either from "https://deno.land/x/functional@v1.0.0/library/Either.js";
 import Task from "https://deno.land/x/functional@v1.0.0/library/Task.js";
 
@@ -46,6 +42,7 @@ const parseCodeDifference = options => map(
 const container = await parseCodeDifference({ jiraTicketPrefix: Deno.env.get("JIRA_TICKET_PREFIX") })
   (Task.wrap(_ => Deno.readAll(Deno.stdin))).run();
 
+// TODO: Find a better way to inspect Either.Left's value.
 if (Either.Left.is(container)) {
   console.error(container[Symbol.for("Value")]);
   Deno.exit(1);
