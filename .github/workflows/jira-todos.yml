@@ -1,0 +1,20 @@
+name: Jira Todos
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-egg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: denolib/setup-deno@master
+        with:
+          deno-version: 1.4.2
+      - run: >
+          export JIRA_TICKET_PREFIX=VE
+          && git diff master..HEAD
+          | deno run --allow-env https://raw.githubusercontent.com/sebastienfilion/functional-jira-todo-github-action/master/action.js

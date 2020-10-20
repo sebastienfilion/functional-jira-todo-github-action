@@ -16,6 +16,10 @@ import {
   when
 } from "https://x.nest.land/ramda@0.27.0/source/index.js";
 
+console.debug("LOL ")
+
+// TODO: lol
+
 import Either from "https://deno.land/x/functional@v1.0.0/library/Either.js";
 import Task from "https://deno.land/x/functional@v1.0.0/library/Task.js";
 
