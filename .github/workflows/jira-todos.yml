@@ -3,7 +3,7 @@ name: Jira Todos
 on: [push]
 
 jobs:
-  publish-egg:
+  code-inspection:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,7 +13,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Code inspection
-          check_id: "code_inspection"
       - uses: denolib/setup-deno@master
         with:
           deno-version: 1.4.2
