@@ -13,6 +13,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Code inspection
+          conclusion: ${{ job.status }}
       - uses: denolib/setup-deno@master
         with:
           deno-version: 1.4.2
