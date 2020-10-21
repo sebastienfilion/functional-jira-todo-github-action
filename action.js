@@ -12,7 +12,7 @@ const decode = new TextEncoder().decode;
 
 const container = await map(
   compose(
-    parseCodeDifference({ jiraTicketPrefix: "FP" }),
+    parseCodeDifference({ jiraTicketPrefix: Deno.env.get("JIRA_TICKET_PREFIX") }),
     x => new TextDecoder().decode(x)
   )
 )

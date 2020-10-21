@@ -3,7 +3,6 @@ import {
   complement,
   compose,
   map,
-  match,
   split,
   test,
   when
